@@ -15,10 +15,18 @@ Webアプリケーションを触る人の中には「自分が操作してど�
 # 工夫したポイント
 # 使用環境
 ## バックグランド
+Ruby、Ruby on Rails
+## フロントエンド
+HTML、CSS、Javascript、Ajax
 ## データベース
+MySQL
 ## インフラ
+AWS
 ## ソース管理
+GitHub、GitHub Desktop
 ## テスト
+Rspec
 ## エディタ
+VScode
 # 課題や今後実装したい機能
 # DB設計
