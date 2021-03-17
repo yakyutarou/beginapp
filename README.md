@@ -1,20 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-
+# アプリケーション名　
+Beginapp
+# 概要 
+# 本番環境　　　
+# 制作環境（意図）
+# DEMO
+# 工夫したポイント
+# 使用環境
+# 課題や今後実装したい機能
+# DB設計
