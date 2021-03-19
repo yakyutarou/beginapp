@@ -35,18 +35,13 @@
   list-style:none;
 }
 
-.btn-success{
-  width:200px;
+.btn-lg{
+  width:250px;
   height:50px;
   margin: 20px 10px 20px 5px;
   
 }
 
-.btn-primary{
-  width:250px;
-  height:50px;
-  margin: 20px 10px 20px 5px;
-}
 
 /* メイン */
 .main{

@@ -20,11 +20,29 @@
       <%= link_to 'BeginApp',"#", class:"beginapp-text" %>
       
     </div>
+    <% if user_signed_in? %>
     <div class="box2 col-12">
       <ul class="box2">
         <li>気に入った商品を購入するためには会員登録が必要です。右側の「新規登録ボタン」にマウスを合わして押してください。会員登録ページに変わります。
         </li>
-        <li><%= link_to '新規登録',"http://www.yahoo.co.jp/", class:"btn btn-primary btn-lg"%>
+        <li><%= link_to 'フリマ',new_user_registration_path, class:"btn btn-primary btn-lg"%>
+        </li>
+      </ul>
+    </div>
+    <div class="box2 col-12">
+      <ul class="box2">
+        <li>気に入った商品を購入するためには会員登録が必要です。右側の「新規登録ボタン」にマウスを合わして押してください。会員登録ページに変わります。
+        </li>
+        <li><%= link_to 'ログアウト',destroy_user_session_path,method: :delete, class:"btn btn-warning btn-lg"%>
+        </li>
+      </ul>
+    </div>
+    <% else %>
+    <div class="box2 col-12">
+      <ul class="box2">
+        <li>気に入った商品を購入するためには会員登録が必要です。右側の「新規登録ボタン」にマウスを合わして押してください。会員登録ページに変わります。
+        </li>
+        <li><%= link_to '新規登録',new_user_registration_path, class:"btn btn-success btn-lg"%>
         </li>
       </ul>
     </div>
@@ -32,10 +50,11 @@
       <ul class = "box3">
        <li>会員登録がお済みの方は右側の「会員サイトへ移動」にマウスを合わして押してください。会員サイトへ移動するためのページへ変わります。
        </li>
-      <li><%= link_to '会員サイトへ移動',"http://www.yahoo.co.jp/",class:"btn btn-primary btn-lg"%></li>
+      <li><%= link_to '会員サイトへ移動',new_user_session_path,class:"btn btn-primary btn-lg"%></li>
       </ul>
     </div>
   <div>
+  <% end %>
   </header>
   <main>
     <div class="main">商品を表示する</div>
