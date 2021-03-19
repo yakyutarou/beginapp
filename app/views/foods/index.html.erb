@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BeginApp</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  
+</head>
+<body>
+  
+  <header>
+  <div class="nav flex-column ">
+    <div class = "box1 col-12">
+      
+      <%= link_to image_tag("/images/s64_f_health_55_1nbg.png", class:"beginapp-icon"), "/" %>
+      <%= link_to 'BeginApp',"#", class:"beginapp-text" %>
+      
+    </div>
+    <div class="box2 col-12">
+      <ul class="box2">
+        <li>気に入った商品を購入するためには会員登録が必要です。右側の「新規登録ボタン」にマウスを合わして押してください。会員登録ページに変わります。
+        </li>
+        <li><%= link_to '新規登録',"http://www.yahoo.co.jp/", class:"btn btn-primary btn-lg"%>
+        </li>
+      </ul>
+    </div>
+    <div class ="box3 col-12">
+      <ul class = "box3">
+       <li>会員登録がお済みの方は右側の「会員サイトへ移動」にマウスを合わして押してください。会員サイトへ移動するためのページへ変わります。
+       </li>
+      <li><%= link_to '会員サイトへ移動',"http://www.yahoo.co.jp/",class:"btn btn-primary btn-lg"%></li>
+      </ul>
+    </div>
+  <div>
+  </header>
+  <main>
+    <div class="main">商品を表示する</div>
+  </main>
+  <footer class="footer">
+    <p class="copyright">Copyright © BeginApp All rights reserved.</p>
+  </footer>
+</body>
+</html>

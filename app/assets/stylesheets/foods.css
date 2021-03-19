@@ -1,0 +1,68 @@
+/* ヘッダー */
+
+
+.box1{
+  height:100px;
+  display:flex;
+  justify-content: center;
+  border-bottom: solid 3px #516ab6;
+  font-size:45px;
+  padding: 0.5em;
+  
+}
+
+.beginapp-icon{
+  margin-right: 10px;
+}
+
+.beginapp-text{
+  color: #f38302;
+}
+.box2{
+  background-color: #000000;
+  font-size:25px;
+  color: white;
+  display:flex;
+  list-style:none;
+}
+
+
+.box3{
+  background-color: #000000;
+  font-size:25px;
+  color: white;
+  display:flex;
+  list-style:none;
+}
+
+.btn-success{
+  width:200px;
+  height:50px;
+  margin: 20px 10px 20px 5px;
+  
+}
+
+.btn-primary{
+  width:250px;
+  height:50px;
+  margin: 20px 10px 20px 5px;
+}
+
+/* メイン */
+.main{
+  background-color: coral;
+  height:1000px
+}
+
+/* フッター */
+.footer{
+  background-color: #999;
+  padding: 10px 0;
+  height: 50px
+}
+
+.copyright{
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+}
