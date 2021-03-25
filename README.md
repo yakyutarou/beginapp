@@ -1,6 +1,6 @@
 
 # アプリケーション名
-Beginapp
+Beginapp21
 # 概要
 高齢者の方がご当地の食品をインターネットを通して購入するWebアプリケーションです。初めて訪れる方でも操作しやすいページとなっています。
 # 本番環境
@@ -13,11 +13,11 @@ Webアプリケーションを触る人の中には「自分が操作してど�
 操作しやすいWebアプリケーションを作りご当地のおいしい食品をインターネット上で購入してもらうためです。
 # DEMO
 ### トップページ
-![画像名](https://github.com/yakyutarou/beginapp/blob/%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E7%AE%A1%E7%90%86%E6%A9%9F%E8%83%BD/toppage.png)
+![画像名](https://github.com/yakyutarou/beginapp21/blob/%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E7%AE%A1%E7%90%86%E6%A9%9F%E8%83%BD/toppage.png)
 購入するためには会員登録が必要だということをページ上部に表示しています。ボタンを押した後何が起こるのか安心させるために説明を入れています。
 
 ### 新規登録ページ
-![画像名](https://github.com/yakyutarou/beginapp/blob/%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E7%AE%A1%E7%90%86%E6%A9%9F%E8%83%BD/registration.png)
+![画像名](https://github.com/yakyutarou/beginapp21/blob/%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E7%AE%A1%E7%90%86%E6%A9%9F%E8%83%BD/registration.png)
 ページ遷移が正しく行われているか確認してもらうためにページ上部にページの名称を入れました。<br>
 入力時の注意点をフォームに吹き出しの形で記述しています。
 # 工夫したポイント
