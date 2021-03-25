@@ -1,0 +1,68 @@
+<div class = "box1 col-12">
+      
+      <%= link_to image_tag("/images/s64_f_health_55_1nbg.png", class:"beginapp-icon"), root_path %>
+      <%= link_to 'BeginApp',root_path,class:"beginapp-text" %>
+      
+</div>
+
+<div class='user-page'>
+  ここは会員登録ページです
+</div>
+
+ <%= form_with model:@user, url:user_registration_path,class:'account-page',id:'account-page',local: true do |f|%>
+  <div class='account-page__inner clearfix'>
+    <div class='account-page__inner--right user-form'>
+     
+        <%= render 'devise/shared/error_messages', model: f.object %> 
+        <div class='field'>
+          <div class='tooltiper nameCheck'>
+            <span class="tooltipMsg">カタカナで入力してください</span>
+          <div class='field-label'>
+            <%= f.label :nickname%>
+          </div>
+          <div class='field-input'>
+           
+            <%= f.text_field :nickname, autofocus: true %> 
+            
+          </div>
+        </div>
+        <div class='field'>
+          <div class='tooltiper nameCheck'>
+            <span class="tooltipMsg">@を含めたメールアドレスを入力してください</span>
+          <div class='field-label'>
+            <%= f.label :email%>
+          </div>
+          
+          <div class='field-input'>
+            <%= f.email_field :email%>
+          </div>
+        </div>
+        <div class='field'>
+          <div class='tooltiper nameCheck'>
+            <span class="tooltipMsg">パスワードを入力すると**で表示されます。セキュリティ上の表示となります。<br>
+            英語と数字を組み合わした６文字以上で入力してください</span>
+          <div class='field-label'>
+            <%= f.label :password%>
+          </div>
+          <div class='field-input' >
+            <%= f.password_field :password, autocomplete: "off"%>
+          </div>
+        </div>
+        <div class='field'>
+        <div class='tooltiper nameCheck'>
+            <span class="tooltipMsg">上記の「パスワード」と同じものを入力してください<br>
+            こちらも入力すると**で表示されます</span>
+          <div class='field-label'>
+            <%= f.label :password_confirmation%>
+          </div>
+          <div class='field-input'>
+            <%= f.password_field :password_confirmation, autocomplete: "off"%>
+          </div>
+        </div>
+        <div class='actions'>
+          
+          <%= f.submit "新規登録", class: 'btn'%>
+        </div>
+      </div>
+    <% end %>
+  </div>
