@@ -63,6 +63,7 @@ VScode
 | food_name     | string     | null: false                  |
 | price         | integer    | null: false                  |
 | explanation   | text       | null: false                  |
+| area_id       | integer    | null: false                  |
 | sell_by       | string     | null: false                  |
 | food_hozon_id | integer    | null: false                  |
 | user          | references | null: false,foreign_key: true| 
