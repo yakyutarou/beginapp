@@ -1,11 +1,41 @@
 
-
-  
-  
   <%= render "layouts/header"%>
-
-  <main>
-    <div class="main"></div>
-  </main>
+  <%# 出品商品一覧 %>
   
+    <div class="alert alert-primary col-6 mx-auto text-center" role="alert">
+      気に行った商品の詳細をご覧になりたい方は商品の画像を押してください<br>
+      商品の詳細ページへ移動します
+    </div>
+  
+    <div class='food-contents'>
+      <h2 class='title'>ピックアップ食品</h2>
+      
+      <div class = "subtitle" >
+      
+       <ul class='food-lists'>
+       <% @foods.each do |food| %>
+        <li class='list'>
+        
+          <div class='food-name'>
+            <%= food.food_name %> 
+          </div>
+          <div class='food-img-content'>
+            <%= image_tag food.image, class: "food-img" %>
+          </div>
+          <div class='food-area'> 
+            <%= food.area.name %>  
+          </div>
+          <div class='food-price'>
+            <%= food.price %>円
+          </div>
+        </li>
+        <% end %>
+       </ul>
+       </div>   
+    </div>
+  
+  
+  <%# 商品一覧 %>
+
   <%= render "layouts/footer"%>
+  

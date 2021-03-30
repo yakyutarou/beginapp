@@ -1,0 +1,115 @@
+<div class = "box1 col-12">
+      
+      <%= link_to image_tag("/images/s64_f_health_55_1nbg.png", class:"beginapp-icon"), root_path %>
+      <%= link_to 'BeginApp21',root_path,class:"beginapp-text" %>
+      
+</div>
+
+<div class="food-sell-contents">
+  
+  <div class="food-sell-main">
+    <h2 class="food-sell-title">食品の情報を入力</h2>
+    <%= form_with model:@food,url:foods_path,local: true do |f| %>
+    
+    <%# <%= render 'shared/error_item', model: f.object %> 
+
+    <%# 出品画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        出品画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+    <%# /出品画像 %>
+    <%# 商品名と商品説明 %>
+    <div class="new-foods">
+      <div class="weight-bold-text">
+        商品名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :food_name, class:"food-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+      <div class="food-explain">
+        <div class="weight-bold-text">
+          商品の説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :explanation, class:"food-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <%# /商品名と商品説明 %>
+    
+    <%# 販売価格 %>
+    <div class="sell-price">
+      <div class="weight-bold-text">
+        <span>販売価格</span>
+        <span class="indispensable">必須</span>
+      </div>
+      <div>
+        <div class="price-content">
+          <div class="price-text">
+            <span>価格（税込）</span>
+            
+          </div>
+          <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"例）300" %>
+        </div>  
+      </div>
+    </div>
+    <%# /販売価格 %>
+
+    <%# 都道府県 %>
+    <div class="food-detail">
+      <div class="form">
+       <div class="weight-bold-text">
+          食品の地域
+          <span class="indispensable">必須</span>
+       </div> 
+        <%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+      </div>
+    </div>
+    <%# /都道府県 %>
+    
+    <%# 賞味期限 %>
+    <div class="sell-price">
+      <div class="weight-bold-text ">
+        <span>賞味期限</span>  
+        <span class="indispensable">必須</span>
+      </div>
+      <div>
+        <div class="price-content">
+          <div class="price-text">
+            <span>出荷して何日後か</span>  
+          </div>
+          <%= f.text_field :sell_by, class:"price-input", id:"item-price", placeholder:"例）10" %>
+        </div>  
+      </div>
+    </div>
+
+    <%# 保存方法 %>
+    <div class="food-detail">
+      <div class="form">
+       <div class="weight-bold-text">
+          保存方法
+          <span class="indispensable">必須</span>
+       </div> 
+        <%= f.collection_select(:food_hozon_id, FoodHozon.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+      </div>
+    </div>  
+    <%# 保存方法 %>
+
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "出品する", class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>  
+</div>
+
+<%= render "layouts/footer"%>
