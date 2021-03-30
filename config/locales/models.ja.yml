@@ -6,3 +6,13 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: 確認用パスワード
+
+      food:
+        food_name: 食品名
+        image: 画像
+        price: 値段
+        area_id: 都道府県
+        explanation: 説明
+        sell_by: 賞味期限
+        food_hozon_id: 保存方法
+        
