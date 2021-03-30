@@ -1,4 +1,6 @@
 class FoodsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
+
   def index
     @foods = Food.all.order('created_at DESC')
   end
