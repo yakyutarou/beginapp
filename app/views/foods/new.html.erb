@@ -11,7 +11,7 @@
     <h2 class="food-sell-title">食品の情報を入力</h2>
     <%= form_with model:@food,url:foods_path,local: true do |f| %>
     
-    <%# <%= render 'shared/error_item', model: f.object %> 
+    <%= render 'layouts/error', model: f.object %>
 
     <%# 出品画像 %>
     <div class="img-upload">
