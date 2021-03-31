@@ -51,6 +51,14 @@
 .error-alert{
   font-size:20px;
 }
+
+.show-page{
+  font-size: 20px;
+  color:red;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 /* /共通 */
 
 /* 出品画像 */

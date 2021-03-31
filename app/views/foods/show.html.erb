@@ -1,0 +1,77 @@
+<div class = "box1 col-12">      
+      <%= link_to image_tag("/images/s64_f_health_55_1nbg.png", class:"beginapp-icon"), root_path %>
+      <%= link_to 'BeginApp21',root_path,class:"beginapp-text" %>      
+</div>
+<div class='user-page'>
+  ここは食品の詳細ページです<br>
+  購入される場合は下の「購入ページに進む」ボタンを押してください
+</div>
+
+<%# 商品の概要 %>
+<div class="food-show">
+  <div class="food-box">
+    <h2 class="name">
+      <%= @food.food_name %>
+    </h2>
+    <div class="food-img-content">
+      <%= image_tag @food.image ,class:"food-box-img" %>
+    </div>  
+  </div>
+    <%# 条件分岐がいつくかありますのでコメントアウトしています%>
+    <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合 %>
+   <% if user_signed_in? %>
+
+    <% if current_user.id == @food.user_id  %>
+     <%= link_to "商品の編集", "#", method: :get, class: "item-red-btn" %>
+     <p class="or-text">or</p>
+     <%= link_to "削除", "#", method: :delete, class:"item-destroy" %>
+    <%# ログインしているユーザーと出品しているユーザーが違う場合 かつ購入済み出ない場合表示%>
+     <% else %>
+      <%= link_to "購入ページに進む","#",class:"item-red-btn"%>  
+      <%# 後で追加food_orders_path(@item.id) %>
+     <% end %>
+    <% end %>
+    <%# // ログイン状態による表示変更%>
+    <p class="or-text"><b>商品の説明</b></p>
+    <div class="food-explain-box">
+      <span><%= @food.explanation %></span>
+    </div>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">都道府県</th>
+          <td class="detail-value"><%= @food.area.name%></td> 
+        </tr>
+        <tr>
+          <th class="detail-item">値段</th>
+          <td class="detail-value"><%= @food.price%>円</td> 
+        </tr>
+        <tr>
+          <th class="detail-item">賞味期限</th>
+          <td class="detail-value"><%= @food.sell_by %>日</td>
+        </tr>
+        <tr>
+          <th class="detail-item">保存方法</th>
+          <td class="detail-value"><%= @food.food_hozon.name %></td>
+        </tr>  
+      </tbody>
+    </table>
+    <% unless user_signed_in? %>
+      <div class='show-page'>
+       食品の購入は会員登録が必要です。食品を購入されたい方は下の「新規登録」ボタンを押してください。会員登録ページに移ります。
+      </div>
+      <%= link_to '新規登録',new_user_registration_path, class:"btn btn-success btn-lg"%>
+      <div class='show-page'>
+       すでに会員登録がお済みの方は下の「会員サイトへ移動」ボタンを押してください。会員サイトへ移動するためのページへ変わります。
+      </div>
+      <%= link_to '会員サイトへ移動',new_user_session_path,class:"btn btn-primary btn-lg"%>
+    <% end %>
+  </div>
+  
+  <%# /商品の概要 %>
+
+  <%# ログアウト状態の場合の表示 %>
+  
+  
+  <%# /ログアウト状態の場合の表示 %>
+  <%= render "layouts/footer"%>
