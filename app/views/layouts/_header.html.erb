@@ -6,7 +6,7 @@
       <%= link_to 'BeginApp21',root_path, class:"beginapp-text" %>
       
     </div>
-    <% if user_signed_in? && current_user.id != 1%>
+    <% if user_signed_in? %> 
     <div class="box2 col-lg-12">
       <ul class="box2">
         <li>右側の青のボタンが自分のニックネームであるか確認ください。違う場合は「会員サイトから離れる」ボタンを押してもう一度「会員サイトへ移動」からやり直してください</li>
@@ -20,11 +20,6 @@
         <li><%= link_to '会員サイトから離れる',destroy_user_session_path,method: :delete, class:"btn btn-warning btn-lg"%></li>
       </ul>
     </div>
-    <%# <% elsif current_user.id == 1%>
-    <div class = "box4 col-lg-4">
-      <%= link_to '出品',new_food_path, class:"btn btn btn-success"%>
-      <%= link_to 'ログアウト',destroy_user_session_path,method: :delete, class:"btn btn btn-success"%>
-    </div>  
     <% else %>
     <div class="box2 col-lg-12">
       <ul class="box2">
@@ -38,5 +33,12 @@
        <li><%= link_to '会員サイトへ移動',new_user_session_path,class:"btn btn-primary btn-lg"%></li>
       </ul>
     </div>
+    <% end %>
+    <% if user_signed_in? && current_user.nickname == "オーナー"%>
+    <div class = "box4 col-lg-4">
+      <%= link_to '出品',new_food_path, class:"btn btn btn-success"%>
+    </div>  
+    
   <div>
   <% end %>
+  

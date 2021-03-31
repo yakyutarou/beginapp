@@ -19,15 +19,18 @@
   </div>
     <%# 条件分岐がいつくかありますのでコメントアウトしています%>
     <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合 %>
+   <% if user_signed_in? %>
+
     <% if current_user.id == @food.user_id  %>
      <%= link_to "商品の編集", "#", method: :get, class: "item-red-btn" %>
      <p class="or-text">or</p>
      <%= link_to "削除", "#", method: :delete, class:"item-destroy" %>
-    
     <%# ログインしているユーザーと出品しているユーザーが違う場合 かつ購入済み出ない場合表示%>
      <% else %>
-      <%= link_to "購入ページに進む", item_orders_path(@item.id) ,class:"item-red-btn"%>  
+      <%= link_to "購入ページに進む","#",class:"item-red-btn"%>  
+      <%# 後で追加food_orders_path(@item.id) %>
      <% end %>
+    <% end %>
     <%# // ログイン状態による表示変更%>
     <p class="or-text"><b>商品の説明</b></p>
     <div class="food-explain-box">
@@ -53,7 +56,22 @@
         </tr>  
       </tbody>
     </table>
+    <% unless user_signed_in? %>
+      <div class='show-page'>
+       食品の購入は会員登録が必要です。食品を購入されたい方は下の「新規登録」ボタンを押してください。会員登録ページに移ります。
+      </div>
+      <%= link_to '新規登録',new_user_registration_path, class:"btn btn-success btn-lg"%>
+      <div class='show-page'>
+       すでに会員登録がお済みの方は下の「会員サイトへ移動」ボタンを押してください。会員サイトへ移動するためのページへ変わります。
+      </div>
+      <%= link_to '会員サイトへ移動',new_user_session_path,class:"btn btn-primary btn-lg"%>
+    <% end %>
   </div>
+  
   <%# /商品の概要 %>
 
+  <%# ログアウト状態の場合の表示 %>
+  
+  
+  <%# /ログアウト状態の場合の表示 %>
   <%= render "layouts/footer"%>
