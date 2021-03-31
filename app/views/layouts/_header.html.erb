@@ -1,19 +1,19 @@
 
   <div class="nav flex-column ">
-    <div class = "box1 col-12">
+    <div class = "box1 col-lg-12">
       
       <%= link_to image_tag("/images/s64_f_health_55_1nbg.png", class:"beginapp-icon"), root_path %>
       <%= link_to 'BeginApp21',root_path, class:"beginapp-text" %>
       
     </div>
     <% if user_signed_in? && current_user.id != 1%>
-    <div class="box2 col-12">
+    <div class="box2 col-lg-12">
       <ul class="box2">
         <li>右側の青のボタンが自分のニックネームであるか確認ください。違う場合は「会員サイトから離れる」ボタンを押してもう一度「会員サイトへ移動」からやり直してください</li>
         <li><%= link_to current_user.nickname,new_user_registration_path, class:"btn btn-primary btn-lg"%></li>
       </ul>
     </div>
-    <div class="box2 col-12">
+    <div class="box2 col-lg-12">
       <ul class="box2">
         <button  class="btn btn-danger">注意</button>
         <li class="box2-2">ページを離れる際は必ず「会員サイトから離れる」を押してください。お客様の情報を守るためです。</li>
@@ -21,18 +21,18 @@
       </ul>
     </div>
     <%# <% elsif current_user.id == 1%>
-    <div class = "box4 col-4">
+    <div class = "box4 col-lg-4">
       <%= link_to '出品',new_food_path, class:"btn btn btn-success"%>
       <%= link_to 'ログアウト',destroy_user_session_path,method: :delete, class:"btn btn btn-success"%>
     </div>  
     <% else %>
-    <div class="box2 col-12">
+    <div class="box2 col-lg-12">
       <ul class="box2">
         <li>気に入った商品を購入するためには会員登録が必要です。右側の「新規登録ボタン」にマウスを合わして押してください。会員登録ページに変わります。</li>
         <li><%= link_to '新規登録',new_user_registration_path, class:"btn btn-success btn-lg"%></li>
       </ul>
     </div>
-    <div class ="box3 col-12">
+    <div class ="box3 col-lg-12">
       <ul class = "box3">
        <li>会員登録がお済みの方は右側の「会員サイトへ移動」にマウスを合わして押してください。会員サイトへ移動するためのページへ変わります。</li>
        <li><%= link_to '会員サイトへ移動',new_user_session_path,class:"btn btn-primary btn-lg"%></li>
