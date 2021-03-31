@@ -1,5 +1,6 @@
 class FoodsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create,:edit, :updete]
+  before_action :move_to_root_path, only: [:edit, :update, :destroy]
 
   def index
     @foods = Food.all.order('created_at DESC').limit(8)
@@ -41,4 +42,8 @@ class FoodsController < ApplicationController
     params.require(:food).permit(:image, :food_name, :explanation, :price, :area_id, :sell_by,
                                  :food_hozon_id).merge(user_id: current_user.id)
   end
-end
+
+  def move_to_root_path
+    redirect_to root_path unless current_user.nickname == "オーナー"
+  end
+ end
