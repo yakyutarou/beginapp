@@ -3,6 +3,7 @@
   color:red;
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 /* ツールチップ */

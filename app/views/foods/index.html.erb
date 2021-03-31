@@ -20,7 +20,7 @@
             <%= food.food_name %> 
           </div>
           <div class='food-img-content'>
-            <%= image_tag food.image, class: "food-img" %>
+            <%=link_to image_tag(food.image, class: "food-img"), food_path(food.id) %>
           </div>
           <div class='food-area'> 
             <%= food.area.name %>  
