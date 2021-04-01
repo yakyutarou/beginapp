@@ -1,9 +1,9 @@
 class CreateOrders < ActiveRecord::Migration[6.0]
   def change
     create_table :orders do |t|
-      t.string     :miyoji,             null: false, default: ""
+      t.string     :myouji,             null: false, default: ""
       t.string     :namae,              null: false, default: ""
-      t.string     :kana_miyoji,        null: false, default: ""
+      t.string     :kana_myouji,        null: false, default: ""
       t.string     :kana_namae,         null: false, default: ""
       t.integer    :age,                null: false
       t.string     :postal_code,        null: false

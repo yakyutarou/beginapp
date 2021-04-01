@@ -56,9 +56,9 @@ ActiveRecord::Schema.define(version: 2021_04_01_053437) do
   end
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "miyoji", default: "", null: false
+    t.string "myouji", default: "", null: false
     t.string "namae", default: "", null: false
-    t.string "kana_miyoji", default: "", null: false
+    t.string "kana_myouji", default: "", null: false
     t.string "kana_namae", default: "", null: false
     t.integer "age", null: false
     t.string "postal_code", null: false
