@@ -1,6 +1,7 @@
 class FoodsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create,:edit, :updete]
+  before_action :authenticate_user!, only: [:new, :create,:edit, :updete,:destroy]
   before_action :move_to_root_path, only: [:edit, :update, :destroy]
+  before_action :save_params, only: [:show, :edit, :update, :destroy]
 
   def index
     @foods = Food.all.order('created_at DESC').limit(8)
@@ -20,20 +21,22 @@ class FoodsController < ApplicationController
   end
 
   def show
-    @food = Food.find(params[:id])
   end
 
   def edit
-    @food = Food.find(params[:id])
   end
 
   def update
-    @food = Food.find(params[:id])
     if @food.update(food_params)
       redirect_to food_path
     else
       render :edit
     end
+  end
+
+  def destroy
+    @food.destroy
+    redirect_to root_path
   end
 
   private
@@ -45,5 +48,9 @@ class FoodsController < ApplicationController
 
   def move_to_root_path
     redirect_to root_path unless current_user.nickname == "オーナー"
+  end
+
+  def save_params
+    @food = Food.find(params[:id])
   end
  end
