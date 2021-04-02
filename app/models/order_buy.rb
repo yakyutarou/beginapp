@@ -5,7 +5,7 @@ class OrderBuy
 
   with_options presence: true do
     validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/ }
-    validates :myouji,:namae,:kana_namae,:kana_myouji,:age,:ara,:city, :address
+    validates :myouji,:namae,:kana_namae,:kana_myouji,:age,:area,:city, :address
     validates :phone_number, format: { with: /\A0[0-9]{9,10}\z/ } # 携帯番号・固定電話両方可、ハイフンなし
     validates :user_id, :item_id
   end
