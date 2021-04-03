@@ -204,6 +204,12 @@ span.tooltipMsg2:before {
   justify-content: center;
 }
 
+.input-default2{
+  width:50%;
+  justify-content: center;
+  margin:10px 0px;
+}
+
 
 /* /カード情報の入力 */
 
