@@ -247,3 +247,7 @@ span.tooltipMsg2:before {
   margin-left: 180px;
 
 }
+
+.postal-code-btn{
+ justify-content: right;
+}
