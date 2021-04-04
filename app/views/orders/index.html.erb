@@ -2,7 +2,10 @@
       <%= link_to image_tag("/images/s64_f_health_55_1nbg.png", class:"beginapp-icon"), root_path %>
       <%= link_to 'BeginApp21',root_path,class:"beginapp-text" %>      
 </div>
-
+<div class='user-page'>
+  ここは購入ページです<br>
+  下記の必要事項を入力して赤の「購入」ボタンを押してください。
+</div>
 <div class='transaction-contents'>
   <div class='transaction-main'>
     <h1 class='transaction-title-text'>
@@ -66,9 +69,9 @@
           <span class="indispensable-2">必須</span>
         </div>
         <div class='input-expiration-date-wrap'>
-          <%= f.text_area :exp_month, class:"input-expiration-date", id:"card-exp-month", placeholder:"例)3" %>
+          <%= f.text_field :exp_month, class:"input-expiration-date", id:"card-exp-month", placeholder:"例)3" %>
           <p>月</p>
-          <%= f.text_area :exp_year, class:"input-expiration-date", id:"card-exp-year", placeholder:"例)23" %>
+          <%= f.text_field :exp_year, class:"input-expiration-date", id:"card-exp-year", placeholder:"例)23" %>
           <p>年</p>
         </div>
       </div>
