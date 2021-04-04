@@ -122,17 +122,19 @@
           <label class="form-text">郵便番号</label>
           <span class="indispensable-2">必須</span>
         </div>
+        
         <div class='tooltiper nameCheck'>
             <span class="tooltipMsg3">ハイフンを除いて入力してください<br>入力しましたら横の「検索」ボタンを押してください<br>町名まで自動で入力されます</span>
         </div>
         <%= f.text_field :postal_code, class:"input-default2", id:"postal-code", placeholder:"例）1234567", maxlength:"8" %>
+        <button id="kensaku">検索</button>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">都道府県</label>
           <span class="indispensable-2">必須</span>
         </div>
-        <%= f.text_field :area, class:"input-default2", id:"prefecture" ,placeholder:"例）神奈川県"%>
+        <%= f.text_field :area, class:"input-default2", id:"pref" ,placeholder:"例）神奈川県"%>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
