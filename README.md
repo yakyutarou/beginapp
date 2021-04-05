@@ -54,6 +54,7 @@ RSpec
 VScode
 # 課題や今後実装したい機能
 ・郵便番号APIを使った住所入力の実装<br>
+・Dockerの導入
 # DB設計
 
 ## users テーブル
@@ -90,7 +91,7 @@ VScode
 
 | Column     | Type             |  Options                      |
 | ---------- | ----------       | ----------------------------- |
-| item       | references       | null: false, foreign_key: true|
+| food       | references       | null: false, foreign_key: true|
 | user       | references       | null: false, foreign_key: true|
 
 ### Association
