@@ -15,4 +15,17 @@ ja:
         explanation: 説明
         sell_by: 賞味期限
         food_hozon_id: 保存方法
+
+      order_buy:
+        myouji: 上の名前
+        namae: 下の名前
+        kana_myouji: 上の名前のフリガナ
+        kana_namae: 下の名前のフリガナ
+        age: 年齢
+        postal_code: 郵便番号
+        area: 都道府県
+        city: 市区町村
+        address: 町名以下
+        building_name: 建物名
+        phone_number: 電話番号
         
