@@ -1,5 +1,5 @@
 class FoodsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create,:edit, :updete,:destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :updete, :destroy]
   before_action :move_to_root_path, only: [:edit, :update, :destroy]
   before_action :save_params, only: [:show, :edit, :update, :destroy]
 
@@ -47,10 +47,10 @@ class FoodsController < ApplicationController
   end
 
   def move_to_root_path
-    redirect_to root_path unless current_user.nickname == "オーナー"
+    redirect_to root_path unless current_user.nickname == 'オーナー'
   end
 
   def save_params
     @food = Food.find(params[:id])
   end
- end
+end

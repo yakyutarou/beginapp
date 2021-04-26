@@ -6,7 +6,7 @@ FactoryBot.define do
     area_id                { 1 }
     sell_by                { 10 }
     food_hozon_id          { 2 }
-  
+
     association :user
 
     after(:build) do |food|
