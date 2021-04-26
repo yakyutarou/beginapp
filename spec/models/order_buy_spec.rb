@@ -34,78 +34,85 @@ RSpec.describe OrderBuy, type: :model do
     it 'tokenが空では購入できないこと' do
       @order_buy.token = nil
       @order_buy.valid?
-      expect(@order_buy.errors.full_messages).to include('Tokenを入力してください')
+      expect(@order_buy.errors.full_messages).to include('クレジットカード情報を入力してください')
     end
 
     it '購入者名は空では購入できない' do
+    
       @order_buy.myouji = ''
       @order_buy.namae = ''
       @order_buy.valid?
-      expect(@order_buy.errors.full_messages).to include('Myoujiを入力してください', 'Myoujiは不正な値です', 'Namaeを入力してください', 'Namaeは不正な値です')
+      expect(@order_buy.errors.full_messages).to include('上の名前を入力してください', '上の名前は不正な値です', '下の名前を入力してください', '下の名前は不正な値です')
     end
 
     it '購入者は、全角（漢字・ひらがな・カタカナ）以外での購入はできない' do
       @order_buy.myouji = 'satou'
       @order_buy.namae = 'hiroshi'
       @order_buy.valid?
-      expect(@order_buy.errors.full_messages).to include('Myoujiは不正な値です', 'Namaeは不正な値です')
+      expect(@order_buy.errors.full_messages).to include('上の名前は不正な値です', '下の名前は不正な値です')
     end
 
     it '購入者のフリガナが空だと購入できない' do
       @order_buy.kana_myouji = ''
       @order_buy.kana_namae = ''
       @order_buy.valid?
-      expect(@order_buy.errors.full_messages).to include('Kana namaeを入力してください', 'Kana namaeは不正な値です', 'Kana myoujiを入力してください',
-                                                         'Kana myoujiは不正な値です')
+      expect(@order_buy.errors.full_messages).to include('下の名前のフリガナを入力してください', '下の名前のフリガナは不正な値です', '上の名前のフリガナを入力してください',
+                                                         '上の名前のフリガナは不正な値です')
     end
 
     it 'ユーザー本名のフリガナは、全角（カタカナ）以外だと購入はできない' do
       @order_buy.kana_myouji = 'さs佐'
       @order_buy.kana_namae = 'ひhi弘'
       @order_buy.valid?
-      expect(@order_buy.errors.full_messages).to include('Kana namaeは不正な値です', 'Kana myoujiは不正な値です')
+      expect(@order_buy.errors.full_messages).to include('下の名前のフリガナは不正な値です', '上の名前のフリガナは不正な値です')
     end
 
     it '郵便番号が空だと購入できないこと' do
       @order_buy.postal_code = ''
       @order_buy.valid?
-      expect(@order_buy.errors.full_messages).to include('Postal codeを入力してください', 'Postal codeは不正な値です')
+      expect(@order_buy.errors.full_messages).to include('郵便番号を入力してください', '郵便番号は不正な値です')
     end
 
     it '年齢が空だと購入できないこと' do
       @order_buy.age = ''
       @order_buy.valid?
-      expect(@order_buy.errors.full_messages).to include('Ageを入力してください')
+      expect(@order_buy.errors.full_messages).to include('年齢を入力してください')
     end
 
     it '都道府県が空だと購入できないこと' do
       @order_buy.area = ''
       @order_buy.valid?
-      expect(@order_buy.errors.full_messages).to include('Areaを入力してください')
+      expect(@order_buy.errors.full_messages).to include('都道府県名を入力してください')
     end
 
     it '市区町村は空では購入できないこと' do
       @order_buy.city = ''
       @order_buy.valid?
-      expect(@order_buy.errors.full_messages).to include('Cityを入力してください')
+      expect(@order_buy.errors.full_messages).to include('市区町村名を入力してください')
     end
 
     it '町名・番地(address)は空では購入できないこと' do
       @order_buy.address = ''
       @order_buy.valid?
-      expect(@order_buy.errors.full_messages).to include('Addressを入力してください')
+      expect(@order_buy.errors.full_messages).to include('町名以下を入力してください')
     end
 
     it '電話番号(phone_number)は12桁以上だと購入できないこと' do
       @order_buy.phone_number = '123456789123'
       @order_buy.valid?
-      expect(@order_buy.errors.full_messages).to include('Phone numberは不正な値です')
+      expect(@order_buy.errors.full_messages).to include('電話番号は不正な値です')
     end
 
     it '電話番号は9桁以下だと購入できない' do
       @order_buy.phone_number = '090234567'
       @order_buy.valid?
-      expect(@order_buy.errors.full_messages).to include('Phone numberは不正な値です')
+      expect(@order_buy.errors.full_messages).to include('電話番号は不正な値です')
+    end
+
+    it '電話番号にハイフンを含むと購入できないこと' do
+      @order_buy.phone_number = '09-1234-56'
+      @order_buy.valid?
+      expect(@order_buy.errors.full_messages).to include("電話番号は不正な値です")
     end
 
     it 'user_idが空だと購入できない' do
