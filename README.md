@@ -8,21 +8,6 @@ Beginapp21
 # 制作環境（意図）
 Webアプリケーションを触る人の中には「自分が操作してどうなるかわからない。」や「変なところを押してしまってパソコンが壊れてしまうのではないか。」という不安からWebアプリケーションを使うのをためらってしまうのが問題です。
 操作しやすいWebアプリケーションを作りご当地のおいしい食品をインターネット上で購入してもらうためです。
-# 本番環境
-URL：https://beginapp21.herokuapp.com<br>
-##### Basic認証<br>
-ID・・・admin<br>
-Pass・・2222<br>
-##### ログイン情報（テスト用）<br>
-ユーザー１（オーナー）<br>
-&emsp;ニックネーム・・・オーナー <br>
-&emsp;メールアドレス・・a@ya.com <br>
-&emsp;パスワード・・・・w2e2r2   <br>
-ユーザー２(購入者)<br>
-&emsp;ニックネーム・・・バイヤー <br>
-&emsp;メールアドレス・・b@ya.com <br>
-&emsp;パスワード・・・・3t3y3u   
-
 # DEMO
 ### トップページ
 ![画像名](https://github.com/yakyutarou/beginapp21/blob/%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E7%AE%A1%E7%90%86%E6%A9%9F%E8%83%BD/toppage.png)
