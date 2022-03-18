@@ -18,3 +18,4 @@ class OrderBuy
                  area: area, city: city, address: address, building_name: building_name, phone_number: phone_number, buy: buy)
   end
 end
+
